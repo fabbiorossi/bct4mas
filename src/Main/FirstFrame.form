@@ -66,9 +66,7 @@
                               <editable value="true"/>
                               <enabled value="true"/>
                               <model>
-                                <item value="Agent1"/>
-                                <item value="Agent2"/>
-                                <item value="Agent3"/>
+                                <item value="Prova"/>
                               </model>
                               <toolTipText value="ggg"/>
                             </properties>
@@ -207,10 +205,8 @@
                                     <properties>
                                       <editable value="true"/>
                                       <model>
-                                        <item value="B1"/>
-                                        <item value="B2"/>
-                                        <item value="B3"/>
-                                        <item value="B4"/>
+                                        <item value="SwitchLight"/>
+                                        <item value="SwitchDoor"/>
                                       </model>
                                     </properties>
                                   </component>

@@ -16,7 +16,7 @@ public class RichiediSwitchLuci extends TickerBehaviour {
     {
         ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
         msg.addReceiver(new AID("Prova", AID.ISLOCALNAME));
-        msg.setConversationId("SwitchWindow");
+        msg.setConversationId("SwitchDoor");
         myAgent.send(msg);
 
     }

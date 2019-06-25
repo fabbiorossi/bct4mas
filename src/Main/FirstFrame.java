@@ -39,7 +39,8 @@ public class FirstFrame {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-               System.out.println(getBoxAgent().getSelectedItem());
+
+                System.out.println(getBoxAgent().getSelectedItem());
                imageHome.setIcon(newimg);
             }
         });
@@ -67,6 +68,17 @@ public class FirstFrame {
     private void createUIComponents() {
         ImageIcon newImageIcon = new ImageIcon("resource/casa+luce+portachiusa.jpg");
         imageHome = new JLabel(newImageIcon);
+    }
+    public void setImageHome(ImageIcon image){
+        imageHome.setIcon(image);
+    }
+
+    public JButton getButton2(){
+        return button2;
+    }
+
+    public String getBoxRep(){
+        return (String) boxRep.getSelectedItem();
     }
 }
 

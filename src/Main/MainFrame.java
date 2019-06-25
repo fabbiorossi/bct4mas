@@ -4,17 +4,22 @@ import javax.swing.*;
 
 public class MainFrame extends JFrame {
 
+    public FirstFrame firstframe;
     public MainFrame(){
 
         super("BCT4MAS");
         this.setBounds(500, 500, 850, 650);
-        FirstFrame fr = new FirstFrame();
-        this.setContentPane(fr.getMainPanel());
+        firstframe = new FirstFrame();
+        this.setContentPane(firstframe.getMainPanel());
 
 
         //finestra.pack();
         this.setResizable(false);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public FirstFrame getFirstframe(){
+        return firstframe;
     }
 }

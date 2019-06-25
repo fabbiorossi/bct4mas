@@ -1,20 +1,24 @@
 package behav;
 
+import Main.MainFrame;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 
+import javax.swing.*;
+
 public class ReceiveMsg extends CyclicBehaviour {
 
     private boolean lights;
-    private boolean window;
+    private boolean door;
+    public MainFrame frame;
 
-
-    public ReceiveMsg(Agent a, boolean lig, boolean win){
+    public ReceiveMsg(Agent a, boolean lig, boolean doo,MainFrame fra){
         super(a);
         lights = lig;
-        window = win;
+        door = doo;
+        frame = fra;
     }
 
     public void action(){
@@ -43,26 +47,34 @@ public class ReceiveMsg extends CyclicBehaviour {
                     if(lights) {
                         System.out.println(this.myAgent.getLocalName() + ": La luce era accesa.");
                         lights = false;
+                        ImageIcon newimg = new ImageIcon("resource/casa-luce+portachiusa.jpg");
+                        frame.getFirstframe().setImageHome(newimg);
                         System.out.println(this.myAgent.getLocalName() + ": La luce è spenta.");
                     }
                     else{
                         System.out.println(this.myAgent.getLocalName() + ": La luce era spenta.");
                         lights = true;
+                        ImageIcon newimg = new ImageIcon("resource/casa+luce+portachiusa.jpg");
+                        frame.getFirstframe().setImageHome(newimg);
                         System.out.println(this.myAgent.getLocalName() + ": La luce è accesa.");
                     }
                     break;
                 }
 
-                case "SwitchWindow": {
-                    if(window) {
-                        System.out.println(this.myAgent.getLocalName() + ": La finestra era aperta.");
-                        lights = false;
-                        System.out.println(this.myAgent.getLocalName() + ": La finestra è chiusa.");
+                case "SwitchDoor": {
+                    if(door) {
+                        System.out.println(this.myAgent.getLocalName() + ": La porta era aperta.");
+                        door = false;
+                        ImageIcon newimg = new ImageIcon("resource/casa+luce+portachiusa.jpg");
+                        frame.getFirstframe().setImageHome(newimg);
+                        System.out.println(this.myAgent.getLocalName() + ": La porta è chiusa.");
                     }
                     else{
-                        System.out.println(this.myAgent.getLocalName() + ": La finestra era chiusa.");
-                        lights = true;
-                        System.out.println(this.myAgent.getLocalName() + ": La finestra è aperta.");
+                        System.out.println(this.myAgent.getLocalName() + ": La porta era chiusa.");
+                        door = true;
+                        ImageIcon newimg = new ImageIcon("resource/casa+luce+portaaperta.jpg");
+                        frame.getFirstframe().setImageHome(newimg);
+                        System.out.println(this.myAgent.getLocalName() + ": La porta è aperta.");
                     }
                     break;
                 }
