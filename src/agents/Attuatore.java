@@ -5,18 +5,16 @@ import jade.core.Agent;
 import Main.MainFrame;
 
 
-public class GestoreLuci extends Agent {
+public class Attuatore extends Agent {
 
-    public MainFrame mainframe;
+    private MainFrame mainframe;
 
-    public GestoreLuci(MainFrame mainframe){
+    public Attuatore(MainFrame mainframe){
         setMainframe(mainframe);
     }
     protected void setup(){
 
-        System.out.println("Sono il gestore delle luci "+getAID());
-
-        this.addBehaviour(new ReceiveMsg(this, true, false, getMainframe()));
+        this.addBehaviour(new ReceiveMsg(this, getMainframe()));
 
     }
 

@@ -7,9 +7,9 @@ import java.awt.event.ActionListener;
 
 
 public class FirstFrame {
-    public JPanel mainPanel;
+    private JPanel mainPanel;
     private JTabbedPane tabbedPaneMain;
-    public JButton button1;
+    private JButton button1;
     private JPanel panelAgent;
     private JPanel panel1;
     private JPanel panel2;
@@ -19,7 +19,6 @@ public class FirstFrame {
     private JLabel behaviour;
     private JComboBox boxAgent;
     private JComboBox boxBehaviour;
-    private JComboBox boxValue;
     private JPanel panelMess;
     private JPanel panel5;
     private JComboBox boxTo;
@@ -36,14 +35,14 @@ public class FirstFrame {
     public FirstFrame() {
 
         newimg = new ImageIcon("resource/casa-luce+portachiusa.jpg");
-        button1.addActionListener(new ActionListener() {
+        /*button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
                 System.out.println(getBoxAgent().getSelectedItem());
                imageHome.setIcon(newimg);
             }
-        });
+        });*/
 
     }
 
@@ -75,6 +74,10 @@ public class FirstFrame {
 
     public JButton getButton2(){
         return button2;
+    }
+
+    public JButton getButton1(){
+        return button1;
     }
 
     public String getBoxRep(){
