@@ -7,8 +7,6 @@ import behav.ControlAccess;
 import jade.core.Profile;
 import jade.core.ProfileImpl;
 import jade.core.Runtime;
-import jade.core.*;
-import jade.lang.acl.ACLMessage;
 import jade.wrapper.AgentController;
 import jade.wrapper.ContainerController;
 import jade.wrapper.StaleProxyException;
@@ -16,7 +14,6 @@ import jade.wrapper.StaleProxyException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.lang.Thread.sleep;
 
 public class MainClass {
 			
@@ -45,7 +42,8 @@ public class MainClass {
 			mainframe.getFirstframe().getButton1().addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent actionEvent) {
-					agent2.RequestAccess("Dottore");
+					String a = String.valueOf(mainframe.getFirstframe().getBoxDoor().getSelectedItem());
+					agent2.RequestAccess(a);
 				}
 			});
 

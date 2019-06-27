@@ -1,5 +1,6 @@
 package behav;
 
+import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
@@ -20,8 +21,19 @@ public class ControlAccess extends CyclicBehaviour {
         if (response != null)
         {
             System.out.println(this.myAgent.getLocalName() + ": "+response.getConversationId());
-            if(response.getConversationId().equals("Open")){
-                System.out.println("APERTO");
+            if(response.getConversationId().equals("Dottore")){
+                ACLMessage msg = new ACLMessage(ACLMessage.CONFIRM);
+                msg.addReceiver(new AID("Attuatore", AID.ISLOCALNAME));
+                msg.setConversationId("Open");
+                myAgent.send(msg);
+                System.out.println(msg);
+
+            } else if(response.getConversationId().equals("Ladro")){
+                ACLMessage msg = new ACLMessage(ACLMessage.CONFIRM);
+                msg.addReceiver(new AID("Attuatore", AID.ISLOCALNAME));
+                msg.setConversationId("Close");
+                myAgent.send(msg);
+                System.out.println(msg);
             }
 
         }

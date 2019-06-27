@@ -18,7 +18,7 @@ public class FirstFrame {
     private JLabel imageHome;
     private JLabel behaviour;
     private JComboBox boxAgent;
-    private JComboBox boxBehaviour;
+    private JComboBox boxDoor;
     private JPanel panelMess;
     private JPanel panel5;
     private JComboBox boxTo;
@@ -50,8 +50,8 @@ public class FirstFrame {
         return mainPanel;
     }
 
-    public JComboBox getBoxAgent(){
-        return boxAgent;
+    public JComboBox getBoxDoor(){
+        return boxDoor;
     }
 
 

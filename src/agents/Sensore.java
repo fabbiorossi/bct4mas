@@ -19,18 +19,14 @@ public class Sensore extends Agent {
 
         this.addBehaviour(new IncreaseTime(this, 5000,timeplus));
         this.addBehaviour(new PrintResponse(this));
-        this.addBehaviour(new ControlAccess(this));
+
 
     }
 
     public void RequestAccess(String user){
         ACLMessage msg = new ACLMessage(ACLMessage.PROPOSE);
-        msg.addReceiver(new AID("Sensore", AID.ISLOCALNAME));
-        if(user.equals("Dottore")){
-            msg.setConversationId("Open");
-        } else if(user.equals("Ladro")){
-            msg.setConversationId("Close");
-        }
+        msg.addReceiver(new AID("Maggiordomo", AID.ISLOCALNAME));
+        msg.setConversationId(user);
         this.send(msg);
     }
 

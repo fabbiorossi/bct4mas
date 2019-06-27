@@ -78,4 +78,11 @@ public class ReceiveSensMsg extends CyclicBehaviour {
 
 
     }
+
+    public void setLights(boolean a){
+        lights = a;
+    }
+    public boolean getLights(){
+        return lights;
+    }
 }
