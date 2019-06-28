@@ -1,6 +1,5 @@
 package agents;
 
-import behav.ControlAccess;
 import behav.IncreaseTime;
 import behav.PrintResponse;
 import jade.core.AID;

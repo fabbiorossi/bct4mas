@@ -6,7 +6,6 @@ import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
 
 public class ReceiveSensMsg extends CyclicBehaviour {
 
@@ -79,10 +78,4 @@ public class ReceiveSensMsg extends CyclicBehaviour {
 
     }
 
-    public void setLights(boolean a){
-        lights = a;
-    }
-    public boolean getLights(){
-        return lights;
-    }
 }

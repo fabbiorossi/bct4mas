@@ -13,7 +13,7 @@ public class MainFrame extends JFrame {
         this.setContentPane(firstframe.getMainPanel());
 
 
-        //finestra.pack();
+        //this.pack();
         this.setResizable(false);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

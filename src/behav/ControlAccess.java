@@ -26,14 +26,12 @@ public class ControlAccess extends CyclicBehaviour {
                 msg.addReceiver(new AID("Attuatore", AID.ISLOCALNAME));
                 msg.setConversationId("Open");
                 myAgent.send(msg);
-                System.out.println(msg);
 
             } else if(response.getConversationId().equals("Ladro")){
                 ACLMessage msg = new ACLMessage(ACLMessage.CONFIRM);
                 msg.addReceiver(new AID("Attuatore", AID.ISLOCALNAME));
                 msg.setConversationId("Close");
                 myAgent.send(msg);
-                System.out.println(msg);
             }
 
         }
