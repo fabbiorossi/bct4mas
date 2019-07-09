@@ -1,6 +1,6 @@
 package behav;
 
-import Main.MainFrame;
+import main.MainFrame;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;

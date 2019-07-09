@@ -2,7 +2,7 @@ package agents;
 
 import behav.ReceiveMsg;
 import jade.core.Agent;
-import Main.MainFrame;
+import main.MainFrame;
 
 
 public class Attuatore extends Agent {
